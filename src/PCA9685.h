@@ -176,10 +176,10 @@ public:
     // Boards with more than one i2c line (e.g. Due/Mega/etc.) can supply a different
     // Wire instance, such as Wire1 (using SDA1/SCL1), Wire2 (using SDA2/SCL2), etc.
     // Supported i2c clock speeds are 100kHz, 400kHz (default), and 1000kHz.
-    PCA9685(byte i2cAddress = B000000, TwoWire& i2cWire = Wire, uint32_t i2cSpeed = 400000);
+    PCA9685(byte i2cAddress = 0b000000, TwoWire& i2cWire = Wire, uint32_t i2cSpeed = 400000);
 
     // Convenience constructor for custom Wire instance. See main constructor.
-    PCA9685(TwoWire& i2cWire, uint32_t i2cSpeed = 400000, byte i2cAddress = B000000);
+    PCA9685(TwoWire& i2cWire, uint32_t i2cSpeed = 400000, byte i2cAddress = 0b000000);
 
 #else
 
@@ -190,7 +190,7 @@ public:
     // Minimum supported i2c clock speed is 100kHz, which sets minimum processor speed at
     // 4MHz+ running in i2c standard mode. For up to 400kHz i2c clock speeds, minimum
     // processor speed is 16MHz+ running in i2c fast mode.
-    PCA9685(byte i2cAddress = B000000);
+    PCA9685(byte i2cAddress = 0b000000);
 
 #endif
 
