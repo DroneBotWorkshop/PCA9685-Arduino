@@ -1,11 +1,12 @@
 // PCA9685-Arduino Multi-Device Proxy Example
 // In this example, we use a special instance to control other modules attached to it via
 // the ALL_CALL register.
+// Edited for updated binary number format -  DroneBot Workshop 2024-11-21
 
 #include "PCA9685.h"
 
-PCA9685 pwmController1(B000000);        // Library using B000000 (A5-A0) i2c address, and default Wire @400kHz
-PCA9685 pwmController2(B000001);        // Library using B000001 (A5-A0) i2c address, and default Wire @400kHz
+PCA9685 pwmController1(0b000000);        // Library using 0b000000 (A5-A0) i2c address, and default Wire @400kHz
+PCA9685 pwmController2(0b000001);        // Library using 0b000001 (A5-A0) i2c address, and default Wire @400kHz
 
 // Not a real device, will act as a proxy to pwmController1 and pwmController2, using all-call i2c address 0xE0, and default Wire @400kHz
 PCA9685 pwmControllerAll(PCA9685_I2C_DEF_ALLCALL_PROXYADR);
