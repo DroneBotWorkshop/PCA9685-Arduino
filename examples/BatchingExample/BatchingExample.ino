@@ -1,10 +1,11 @@
 // PCA9685-Arduino Batching Example
 // In this example, we randomly select PWM frequencies on all 12 outputs and allow them
 // to drive for 5 seconds before changing them.
+// Modified for correct binary number format - DroneBot Workshop 2024-11-21
 
 #include "PCA9685.h"
 
-PCA9685 pwmController(B010101);         // Library using B010101 (A5-A0) i2c address, and default Wire @400kHz
+PCA9685 pwmController(0b010101);         // Library using 0b010101 (A5-A0) i2c address, and default Wire @400kHz
 
 void setup() {
     Serial.begin(115200);               // Begin Serial and Wire interfaces
